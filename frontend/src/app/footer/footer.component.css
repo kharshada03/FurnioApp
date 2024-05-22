@@ -1,0 +1,17 @@
+.linkStyle li{
+  margin-bottom: 15px;
+  /* text-decoration-style: solid; */
+  /* font-style: solid black; */
+}
+.linkStyle {
+  margin-top: 20px;
+}
+input {
+  border: none;
+  border-bottom: 1px solid #000000;
+  outline: none
+}
+.footer{
+  background-color: white;
+}
+

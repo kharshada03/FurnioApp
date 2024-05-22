@@ -1,0 +1,12 @@
+.homeContain{
+  position: absolute;
+  background-color: pink;
+  margin-left: 55%;
+  margin-top: -31%;
+}
+.service{
+  background-color: rgb(248, 206, 206);
+  width: 100%;
+  display: flex;
+
+}

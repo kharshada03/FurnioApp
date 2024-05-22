@@ -1,0 +1,32 @@
+.formbackground{
+    background-image: url('../../assets/images/home.jpg');
+    position: absolute;
+    height:100%; 
+    width: 100%; 
+    opacity: 50%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+.contain{
+    background-color: white;
+    margin-left: 350px;
+    margin-right: 350px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* text-align: center; */
+}
+.contain h1{
+    text-align: center;
+}
+/* .contain div{
+    margin-left: 10px;
+    margin-right: 10px;
+} */
+/* .contain input[text],input[password]{
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none
+} */

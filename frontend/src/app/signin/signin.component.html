@@ -3,27 +3,50 @@
 <div class="contain">
     <h1>SignIn</h1>
     <br>
-<form class="container">
+<!-- <form class="container" #signinForm="ngForm" (ngSubmit)="save(signinForm)"> -->
+  <form class="container" #signinForm="ngForm">
     <div class="row">
       <div class="form-floating mb-3 col">
-        <input type="text" class="form-control" id="firstName" placeholder="First Name">
+        <input type="text" class="form-control" [(ngModel)]="firstName" id="firstName" required name="firstName" placeholder="First Name" minlength="3" maxlength="50">
+        <div *ngIf="signinForm.controls['firstName'] && signinForm.controls['firstName'].touched && signinForm.controls['firstName'].invalid">
+          <div class="text-danger" *ngIf="signinForm.controls['firstName'].errors?.['required']">First Name is required.</div>
+          <div class="text-danger" *ngIf="signinForm.controls['firstName'].errors?.['minlength']">First Name must be at least 3 characters long.</div>
+          <div class="text-danger" *ngIf="signinForm.controls['firstName'].errors?.['maxlength']">First Name cannot be longer than 50 characters.</div>
+        </div>
         <label for="firstName" style="margin-left: 10px;">First Name</label>
       </div>
+
       <div class="form-floating mb-3 col">
-        <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
+        <input type="text" class="form-control" [(ngModel)]="lastName" required id="lastName" name="lastName" placeholder="Enter Last Name">
+        <div *ngIf="signinForm.controls['lastName'] && signinForm.controls['lastName'].touched && signinForm.controls['lastName'].invalid">
+          <div class="text-danger" *ngIf="signinForm.controls['lastName'].errors?.['required']">Last Name is required.</div>
+          <div class="text-danger" *ngIf="signinForm.controls['lastName'].errors?.['minlength']">Last Name must be at least 3 characters long.</div>
+          <div class="text-danger" *ngIf="signinForm.controls['lastName'].errors?.['maxlength']">Last Name cannot be longer than 50 characters.</div>
+        </div>
         <label for="lastName" style="margin-left: 10px;">Last Name</label>
       </div>
     </div>
+
     <div class="form-floating mb-3 col col-md-6">
-      <input type="email" class="form-control" id="email" placeholder="Enter Email Address">
+      <input type="email" class="form-control" [(ngModel)]="email" id="email" name="email" placeholder="Enter Email Address" required email>
+      <div *ngIf="signinForm.controls['email'] && signinForm.controls['email'].touched && signinForm.controls['email'].invalid">
+        <div class="text-danger" *ngIf="signinForm.controls['email'].errors?.['required']">Email is required.</div>
+        <div class="text-danger" *ngIf="signinForm.controls['email'].errors?.['email']">Please enter a valid email address.</div>
+      </div>
       <label for="email">Email</label>
     </div>
+
     <div class="form-floating mb-3 col col-md-6">
-      <input type="text" class="form-control" id="mobileNo" placeholder="Enter Mobile Number">
+      <input type="text" class="form-control" [(ngModel)]="mobileNo" id="mobileNo" name="mobileNo" placeholder="Enter Mobile Number" required pattern="[0-9]{1,10}" minlength="10">
+      <div *ngIf="signinForm.controls['mobileNo'] && signinForm.controls['mobileNo'].touched && signinForm.controls['mobileNo'].invalid">
+        <div class="text-danger" *ngIf="signinForm.controls['mobileNo'].errors?.['required']">Mobile Number is required.</div>
+        <div class="text-danger" *ngIf="signinForm.controls['mobileNo'].errors?.['pattern']">Please enter a valid Mobile Number (up to 10 digits).</div>
+        <div class="text-danger" *ngIf="signinForm.controls['mobileNo'].errors?.['minlength']">Please enter a valid Mobile Number (up to 10 digits).</div>
+      </div>
       <label for="mobileNo">Mobile Number</label>
     </div>
     <div class="form-floating mb-3 col col-md-6">
-      <input type="password" class="form-control" id="password" placeholder="Enter Password">
+      <input type="password" class="form-control" [(ngModel)]="password" id="password" name="password" placeholder="Enter Password">
       <label for="password">Password</label>
     </div>
     <div class="form-floating mb-3 col col-md-6">
@@ -65,6 +88,6 @@
       </div>
     </div>
     <br>
-    <button type="submit" class="btn btn-dark">Submit</button>
+    <button type="submit" class="btn btn-dark" [disabled]="signinForm.invalid" (click)="save()">Submit</button>
   </form>
 </div>

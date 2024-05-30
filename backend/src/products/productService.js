@@ -17,7 +17,7 @@ module.exports.getDataFromDBService = () =>{
 
         try {
             const result = await productModel.find({});
-            // console.log("Data",result);
+            console.log("Data",result);
             resolve(result);
           } catch (error) {
             throw error;

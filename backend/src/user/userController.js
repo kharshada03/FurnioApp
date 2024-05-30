@@ -4,9 +4,9 @@ const router = express.Router();
 
 var createUserController = async (req,res)=>{
     try{
-        // console.log(body);
+        // console.log(req.body);
         var status = await userService.createUserDBService(req.body);
-        // console.log(status);
+        console.log(status);
         if(status){
             res.send({"status":true,"message":"User Created Successfully"});
         }

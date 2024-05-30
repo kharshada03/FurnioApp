@@ -3,16 +3,16 @@
 <div class="contain">
     <h1>Login</h1>
     <br>
-<form class="container">
+<form class="container" #loginForm="ngForm">
     <div class="form-floating mb-3 col col-md-6 offset-md-3">
-      <input type="email" class="form-control" id="email" placeholder="Enter Email Address">
+      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" placeholder="Enter Email Address">
       <label for="email">Email</label>
     </div>
     <div class="form-floating mb-3 col col-md-6 offset-md-3">
-      <input type="password" class="form-control" id="password" placeholder="Enter Password">
+      <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" placeholder="Enter Password">
       <label for="password">Password</label>
     </div>
     <br>
-    <button type="submit" class="btn btn-dark">Login</button>
+    <button type="submit" class="btn btn-dark" [disabled]="loginForm.invalid" (click)="login()">Login</button>
   </form>
 </div>

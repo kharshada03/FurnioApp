@@ -5,10 +5,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 // import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
-import { environment } from './../environments/environment';
+// import { environment } from './../environments/environment';
 import { ContactComponent } from './contact/contact.component';
 import { SigninComponent } from './signin/signin.component';
 import { LoginComponent } from './login/login.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +23,9 @@ import { LoginComponent } from './login/login.component';
     FooterComponent,
     ContactComponent,
     SigninComponent,
-    LoginComponent
+    LoginComponent,
+    HttpClientModule,
+    FormsModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

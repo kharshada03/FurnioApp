@@ -13,5 +13,6 @@ input {
 }
 .footer{
   background-color: white;
+  position: relative;
 }
 

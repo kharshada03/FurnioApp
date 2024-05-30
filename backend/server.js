@@ -5,6 +5,14 @@ const path = require('path');
 var routes = require('./router/router');
 const cors = require('cors');
 
+app.use(cors(
+  {
+  origin: "http://localhost:4200",
+  methods: 'POST,GET,PUT,OPTIONS,DELETE' ,
+  credentials: true
+}
+));
+
 var mongoose = require('mongoose');
 var mongoURI = 'mongodb://localhost:27017/furnio';
 
@@ -23,7 +31,7 @@ var mongoURI = 'mongodb://localhost:27017/furnio';
 
 app.use(express.json());
 app.use(routes);
-app.use(cors());
+app.use(express.urlencoded({ extended: true }));
 
 // module.exports = routes;
 

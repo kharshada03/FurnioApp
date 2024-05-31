@@ -11,6 +11,8 @@ import { SigninComponent } from './signin/signin.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CartListComponent } from './cart-list/cart-list.component';
+import { ViewProductComponent } from './view-product/view-product.component';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +27,9 @@ import { FormsModule } from '@angular/forms';
     SigninComponent,
     LoginComponent,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CartListComponent,
+    ViewProductComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

@@ -4,6 +4,8 @@ import { ProductsComponent } from './products/products.component';
 import { ContactComponent } from './contact/contact.component';
 import { SigninComponent } from './signin/signin.component';
 import { LoginComponent } from './login/login.component';
+import { CartListComponent } from './cart-list/cart-list.component';
+import { ViewProductComponent } from './view-product/view-product.component';
 
 export const routes: Routes = [
   {
@@ -25,5 +27,13 @@ export const routes: Routes = [
   {
     path:'login',
     component:LoginComponent
+  },
+  {
+    path:'cart',
+    component:CartListComponent
+  },
+  {
+    path:'viewProduct',
+    component:ViewProductComponent
   }
 ];

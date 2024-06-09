@@ -26,7 +26,7 @@ module.exports.createUserDBService = (userDetails) => {
 
         try {
             const result = await userModelData.save();
-            console.log("Data",result);
+            // console.log("Data",result);
             resolve(result);
           } catch (error) {
             throw error;

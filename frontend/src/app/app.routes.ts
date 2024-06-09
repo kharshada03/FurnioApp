@@ -33,7 +33,7 @@ export const routes: Routes = [
     component:CartListComponent
   },
   {
-    path:'viewProduct',
+    path:'viewProduct/:pid',
     component:ViewProductComponent
   }
 ];

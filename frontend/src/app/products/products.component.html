@@ -5,13 +5,13 @@
 </div>
 <br>
 <div class="prodList">
-  <div class="card products" *ngFor="let products of ProductsArray" (click)="viewProduct(products.pid)">
+  <div class="card products" *ngFor="let products of ProductsArray" [routerLink]="['/viewProduct/',products.pid]">
     <img [src]="products.image" class="card-img-top productImg" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{products.name}}</h5>
       <p class="card-text">&#8377; {{products.price}}</p>
       <div class="buyButton">
-        <button type="submit" class="btn btn-dark" (click)="addToCart()">Add to Cart</button><br><br>
+        <button type="submit" class="btn btn-dark" [routerLink]="['/viewProduct/',products.pid]">Add to Cart</button><br><br>
         <button type="submit" class="btn btn-dark">Buy Now</button>
     </div>
     </div>

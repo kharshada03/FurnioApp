@@ -1,9 +1,8 @@
 
 var mongoose = require('mongoose');
-// return mongoose;
 var Schema = mongoose.Schema;
 
-var productSchema = new Schema({
+var cartSchema = new Schema({
     pid:{
         type: Number,
         require: true
@@ -16,18 +15,18 @@ var productSchema = new Schema({
         type: Number,
         require: true
     },
-    image:{
+    colorStyle:{
         type:String,
         require:true
     },
-    description:{
-        type : String,
-        require :true
+    email:{
+        type:String,
+        require:true
     },
-    colour:{
+    quantity:{
         type:String,
         require:true
     }
 });
 
-module.exports = mongoose.model('products', productSchema);
+module.exports = mongoose.model('cart', cartSchema);

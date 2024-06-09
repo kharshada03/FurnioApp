@@ -40,6 +40,7 @@ export class LoginComponent {
           {
         
              this.router.navigateByUrl('/products');
+             localStorage.setItem('email',this.email);
       
           } 
           else

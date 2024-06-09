@@ -1,1 +1,41 @@
-<p>view-product works!</p>
+<br><br>
+<div class="container" *ngIf="productDetail != null">
+    <div class="row" *ngFor="let detail of productDetail">
+        <div class="col" style="margin-left: 50px;">
+            <img [src]="detail.image" style="height: 400px;width: 400px;">
+        </div>
+        <div class="col">
+          <h1>{{detail.name}}</h1>
+          <h4>Rs.{{detail.price}}</h4>
+          <p>{{detail.description}}</p>
+          <br>
+          <form>
+          <h5>Size</h5>
+            <div style="display: flex;justify-content: space-between;width: 100px;">
+                <button class="primary" type="submit">S</button>
+                <button class="primary" type="submit">M</button>
+                <button class="primary" type="submit">L</button>
+            </div>
+            <br>
+           <h5>Color</h5>
+            <div style="display: flex;justify-content: space-between;width: 150px;">
+                <ul *ngFor="let colorSelect of detail.colorStyle" type="none">
+                    <li><input type="button" [style.backgroundColor]="colorSelect" name="colorStyle" [(ngModel)]="colorStyle" (click)="onColorSelect(colorSelect)"></li>
+                </ul>
+            </div>
+            <br>
+            <h6>Qty:</h6>
+                <select name="qty" [(ngModel)]="qty">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            <br><br>
+            <div style="display: flex;justify-content: space-between; width: 200px;">
+                <button class="primary" type="submit" (click)="addToCart(detail.pid)">Add to Cart</button>
+                <button class="primary" type="submit">Buy</button>
+            </div>
+        </form>
+        </div>
+      </div>
+    
+</div>

@@ -5,7 +5,10 @@ const router = express.Router();
 var productController = require('../src/products/productController');
 
 router.route('/product/get').get(productController.getDataController);
-router.route('/product/view/:pid').get(productController.viewProductController)
+router.route('/product/view/:pid').get(productController.viewProductController);
+
+var cartController = require('../src/cart/cartController');
+router.route('/product/addCart/:pid').post(cartController.addToCartProductController);
 
 var userController = require('../src/user/userController');
 

@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { RouterOutlet,Router } from '@angular/router';
+import { RouterOutlet,Router, RouterLink } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [RouterOutlet,CommonModule],
+  imports: [RouterOutlet,CommonModule,RouterLink],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
@@ -32,12 +32,8 @@ export class ProductsComponent implements OnInit {
       });
   }
 
-  addToCart(){
-    this.router.navigateByUrl('/cart');
-  }
-  viewProduct(pid:any){
-    this.router.navigateByUrl('/viewProduct');
-    console.log(pid);
-  }
+  // addToCart(){
+  //   this.router.navigateByUrl('/viewDetails/'+this.pid);
+  // }
 
 }                         

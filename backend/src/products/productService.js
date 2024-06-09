@@ -1,5 +1,6 @@
 
 var productModel = require('./productModel');
+const LocalStorage = require('node-localstorage');
 // console.log(productModel);
 
 
@@ -16,26 +17,11 @@ module.exports.getDataFromDBService = () =>{
             throw error;
           }
 
-        // productModel.find({});
-
-        // productModel.find({}, function returnData(error, result){
-
-        //     if(error){
-        //         reject(false);
-        //     } else {
-        //         resolve(result);
-        //     }
-        // });
-
-    //     // var result = await productModel.find({});
-    //     // return result.json();
     });
 
 }
 
 module.exports.getProdDetailService = (pid) =>{
-
-  // console.log(pid);
 
   return new Promise(async function checkUrl(resolve,reject){
  
@@ -48,5 +34,4 @@ module.exports.getProdDetailService = (pid) =>{
            }
  
      });
- 
  }

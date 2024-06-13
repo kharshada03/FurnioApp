@@ -19,6 +19,22 @@ var userSchema = new Schema({
         type:String,
         required:true
     },
+    address1:{
+        type:String,
+        required:true
+    },
+    address2:{
+        type:String,
+        required:false
+    },
+    state:{
+        type:String,
+        required:true
+    },
+    pincode:{
+        type:String,
+        required:true
+    },
     password:{
         type:String,
         required:true

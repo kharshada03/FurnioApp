@@ -68,4 +68,30 @@ export class ViewProductComponent implements OnInit {
   onColorSelect(value:any){
     this.colorSelect= value;
   }
+
+  buy(pid:number){
+    this.http.get("http://localhost:3000/product/view/"+pid).subscribe((resultData : any)=>
+      {
+        // console.log(resultData);
+         this.productDetail = resultData.data;
+        //  console.log(productDetail);
+      });
+      for (let index = 0; index < this.productDetail.length; index++) {
+        const element = this.productDetail[index];
+        var body = {
+          'pid':pid,
+          'name':element.name,
+          'price':element.price,
+          'quantity':this.qty,
+          "colorStyle":this.colorSelect,
+          "email":localStorage.getItem('email')
+        };
+        this.http.post("http://localhost:3000/product/addCart/'"+pid,body).subscribe((resultData : any)=>
+          {
+            console.log(resultData);
+            alert("Order Placed Successfully..!!");
+          });
+        
+      }
+  }
 }

@@ -20,7 +20,7 @@
            <h5>Color</h5>
             <div style="display: flex;justify-content: space-between;width: 150px;">
                 <ul *ngFor="let colorSelect of detail.colorStyle" type="none">
-                    <li><input type="button" [style.backgroundColor]="colorSelect" name="colorStyle" [(ngModel)]="colorStyle" (click)="onColorSelect(colorSelect)"></li>
+                    <li><input type="button" class="colorSelectStyle" [style.backgroundColor]="colorSelect" name="colorStyle" [(ngModel)]="colorStyle" (click)="onColorSelect(colorSelect)"></li>
                 </ul>
             </div>
             <br>
@@ -32,7 +32,7 @@
             <br><br>
             <div style="display: flex;justify-content: space-between; width: 200px;">
                 <button class="primary" type="submit" (click)="addToCart(detail.pid)">Add to Cart</button>
-                <button class="primary" type="submit">Buy</button>
+                <button class="primary" type="submit" (click)="buy(detail.pid)">Buy</button>
             </div>
         </form>
         </div>

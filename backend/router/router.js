@@ -9,6 +9,7 @@ router.route('/product/view/:pid').get(productController.viewProductController);
 
 var cartController = require('../src/cart/cartController');
 router.route('/product/addCart/:pid').post(cartController.addToCartProductController);
+router.route('/product/viewCart').post(cartController.getCartProductListController);
 
 var userController = require('../src/user/userController');
 

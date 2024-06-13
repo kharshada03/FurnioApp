@@ -23,8 +23,8 @@ export class LoginComponent {
   }
 
   login(){
-    console.log(this.email);
-    console.log(this.password);
+    // console.log(this.email);
+    // console.log(this.password);
 
     let bodyData = {
       "email":this.email,
@@ -38,10 +38,8 @@ export class LoginComponent {
 
         if (resultData.status) 
           {
-        
              this.router.navigateByUrl('/products');
              localStorage.setItem('email',this.email);
-      
           } 
           else
            {

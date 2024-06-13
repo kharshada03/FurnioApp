@@ -1,11 +1,12 @@
 
-var productModel = require('./cartModel');
+// const cartModel = require('./cartModel');
+var cartModel = require('./cartModel');
 
 module.exports.addToCartService = (cartDetails) => {
 
     return new Promise(async function createCart(resolve,reject){
   
-        var productModelData = new productModel();
+        var productModelData = new cartModel();
   
         productModelData.name = cartDetails.name;
         productModelData.pid = cartDetails.pid;
@@ -27,3 +28,17 @@ module.exports.addToCartService = (cartDetails) => {
         
     })
   }
+
+  module.exports.getCartProducts = (userDetails) =>{
+
+    return new Promise(async function checkUrl(resolve,reject){
+           try {
+               const result = await cartModel.find({email:"ron@gmail.com"});
+              //  console.log("Data",result);
+               resolve(result);
+             } catch (error) {
+               throw error;
+             }
+   
+       });
+   }

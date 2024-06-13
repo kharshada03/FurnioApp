@@ -19,13 +19,23 @@
         <a class="nav-link" href="#"><i class="bi bi-shop"></i>Shops</a>
       </li>
       <li class="nav-item navStyle">
-        <a class="nav-link" routerLink="contact"><i class="bi bi-telephone-fill"></i>Contact Us</a>
+        <a class="nav-link" routerLink="contact"><i class="bi bi-telephone"></i>Contact Us</a>
+      </li>
+      <li class="nav-item navStyle">
+        <a class="nav-link" routerLink="cart"><i class="bi bi-cart"></i>Cart</a>
       </li>
     </ul>
-    <div class="nav navbar-nav my-2 my-lg-0 nav-item" style="margin-left: 25%;">
+    <!-- <div class="nav navbar-nav my-2 my-lg-0 nav-item" style="margin-left: 25%;" *ngIf="userEmail!=null else signInBlock"> -->
+      <div class="nav navbar-nav my-2 my-lg-0 nav-item" style="margin-left: 25%;">
+        <a class="nav-link" href="#" id="loggedout"><i class="bi bi-person-dash"></i> LoggedOut</a>
         <a class="nav-link" routerLink="signin" id="signin"><i class="bi bi-person"></i>SignIn</a>
         <a class="nav-link" routerLink="login" id="loggedIn"><i class="bi bi-person"></i>LogIn</a>
-        <a class="nav-link" href="#" id="loggedout"><i class="bi bi-person-dash"></i> LoggedOut</a>
-    </div>
+      </div>
+      <!-- <div class="nav navbar-nav my-2 my-lg-0 nav-item" style="margin-left: 25%;">
+      <ng-template #signInBlock>
+        <a class="nav-link" routerLink="signin" id="signin"><i class="bi bi-person"></i>SignIn</a>
+        <a class="nav-link" routerLink="login" id="loggedIn"><i class="bi bi-person"></i>LogIn</a>
+      </ng-template>
+    </div> -->
   </div>
 </nav>

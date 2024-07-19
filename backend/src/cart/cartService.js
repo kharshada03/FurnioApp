@@ -32,8 +32,25 @@ module.exports.addToCartService = (cartDetails) => {
   module.exports.getCartProducts = (userDetails) =>{
 
     return new Promise(async function checkUrl(resolve,reject){
+
            try {
-               const result = await cartModel.find({email:"ron@gmail.com"});
+               const result = await cartModel.find({"email":userDetails.email});
+              //  console.log("Data",result);
+               resolve(result);
+             } catch (error) {
+               throw error;
+             }
+   
+       });
+   }
+
+   module.exports.removeCartProducts = (userDetails) =>{
+
+    return new Promise(async function checkUrl(resolve,reject){
+      console.log(userDetails.pid);
+
+           try {
+               const result = await cartModel.deleteOne({pid:userDetails.pid});
               //  console.log("Data",result);
                resolve(result);
              } catch (error) {

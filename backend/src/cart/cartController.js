@@ -17,7 +17,7 @@ var addToCartProductController = async(req,res)=>{
 }
 
 var getCartProductListController = async(req,res)=>{
-    // console.log(req.params.pid);
+    // console.log(req.body);
     
     try {
         var prodDetails = await productSevice.getCartProducts(req.body);
@@ -29,4 +29,16 @@ var getCartProductListController = async(req,res)=>{
     }
 }
 
-module.exports = {addToCartProductController,getCartProductListController};
+var removeFromCartController = async(req,res)=>{
+    console.log(req.body);
+    
+    try {
+        var prodDetails = await productSevice.removeCartProducts(req.body);
+        // console.log(prodDetails);
+        res.send({ "status": true, "data": prodDetails });
+    } catch (error) {
+        console.error('Error fetching product details:', error);
+        res.status(500).send({ "status": false, "message": "Internal Server Error" });
+    }
+}
+module.exports = {addToCartProductController,getCartProductListController,removeFromCartController};

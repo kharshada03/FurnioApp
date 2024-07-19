@@ -15,6 +15,10 @@ var cartSchema = new Schema({
         type: Number,
         require: true
     },
+    image:{
+        type: String,
+        require: true
+    },
     colorStyle:{
         type:String,
         require:true

@@ -1,1 +1,44 @@
-<p>cart-list works!</p>
+
+<div class="head"></div>
+<div class="headingName">
+  <h1>Your Cart</h1>
+</div>
+<br>
+
+<div class="container">
+<div class="row">
+    <div class="col-md-8">
+        <h3>{{ProductsArray.length}} Items in Cart</h3>
+        <div class="card mb-3 cart-item" *ngFor="let prod of ProductsArray">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img [src]="prod.image"style="height: 100px;width: 100px;" class="img-fluid" alt="Product Image">
+                    </div>
+                    <div class="col-md-8">
+                        <h5 class="card-title">{{prod.name}}</h5>
+                        <p>Qty: {{prod.quantity}}</p>
+                            <div style="display: flex;">
+                                Color:<input type="button" class="colorSelectStyle" [style.backgroundColor]="prod.colorStyle" name="colorStyle">
+                            </div>
+                    </div>
+                    <div class="col-md-2 text-right">
+                        <p>₹{{prod.price * prod.quantity}}</p>
+                        <a routerLink="cart" (click)="removeCart(prod.pid)" class="text-muted">Remove</a><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="cart-summary">
+            <h5>Total</h5>
+            <p class="h2">₹{{total}}</p>
+            <button class="btn btn-checkout btn-block">Checkout</button>
+            <h5 class="mt-4"><i class="bi bi-geo-alt-fill"></i>Delivery Address</h5>
+            <div class="input-group mb-3">
+                <p>B-203,Sunshine Complex,<br>Vasai Link Road,Vasai(E)-401209</p>
+            </div>
+        </div>
+    </div>
+</div>

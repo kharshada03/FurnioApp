@@ -52,6 +52,7 @@ export class ViewProductComponent implements OnInit {
           'pid':pid,
           'name':element.name,
           'price':element.price,
+          'img':element.image,
           'quantity':this.qty,
           "colorStyle":this.colorSelect,
           "email":localStorage.getItem('email')
@@ -86,7 +87,7 @@ export class ViewProductComponent implements OnInit {
           "colorStyle":this.colorSelect,
           "email":localStorage.getItem('email')
         };
-        this.http.post("http://localhost:3000/product/addCart/'"+pid,body).subscribe((resultData : any)=>
+        this.http.post("http://localhost:3000/product/buy/'"+pid,body).subscribe((resultData : any)=>
           {
             console.log(resultData);
             alert("Order Placed Successfully..!!");

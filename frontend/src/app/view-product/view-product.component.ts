@@ -78,20 +78,26 @@ export class ViewProductComponent implements OnInit {
         //  console.log(productDetail);
       });
       for (let index = 0; index < this.productDetail.length; index++) {
+
+        // store data in local storage
         const element = this.productDetail[index];
-        var body = {
-          'pid':pid,
-          'name':element.name,
-          'price':element.price,
-          'quantity':this.qty,
-          "colorStyle":this.colorSelect,
-          "email":localStorage.getItem('email')
-        };
-        this.http.post("http://localhost:3000/product/buy/'"+pid,body).subscribe((resultData : any)=>
-          {
-            console.log(resultData);
-            alert("Order Placed Successfully..!!");
-          });
+        
+
+
+        // const element = this.productDetail[index];
+        // var body = {
+        //   'pid':pid,
+        //   'name':element.name,
+        //   'price':element.price,
+        //   'quantity':this.qty,
+        //   "colorStyle":this.colorSelect,
+        //   "email":localStorage.getItem('email')
+        // };
+        // this.http.post("http://localhost:3000/buy/"+pid,body).subscribe((resultData : any)=>
+        //   {
+        //     console.log(resultData);
+        //     alert("Order Placed Successfully..!!");
+        //   });
         
       }
   }

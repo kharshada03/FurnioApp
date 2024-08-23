@@ -20,7 +20,7 @@ export class SigninComponent{
   address1:String = "";
   address2:String = "";
   password:String = "";
-  state:string = "";
+  state:string = '0';
   pincode:string = "";
 
   constructor(private http:HttpClient,private form:FormBuilder){
